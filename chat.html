@@ -1,0 +1,190 @@
+<html>
+<title>Let's chat now</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/*header time style*/
+	   .time{background-color:#E0E8E9;
+            color: black;
+            padding:0.05px;
+			
+            width:100%;
+            opacity:0.75;
+			font-family:verdana;
+            font-size:10px;
+			}
+
+/*header style*/
+	   .div1{background-color:#0CD1E9;
+            color: white;
+			padding:0.03px;
+            height : 70px;
+            width:100%;
+            opacity:0.75;
+			font-family:Calibri;
+            }			
+
+/*navigation*/			
+			ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #0CD1E9;
+}
+
+/*div 4 style*/
+	   .div4{background-color:white;
+            color: black;
+            height :73%;
+            width:100%;
+            opacity:0.75;
+			font-family:Calibri;
+            max-width: 500px;
+            margin: auto;
+			font-family:Calibri;
+			align-items: center;
+			overflow:auto;
+			}		
+/*div5 style*/
+	   .div5{background-color:#0CD1E9;
+            color: white;
+			padding:0.03px;
+            height : 40px;
+            width:100%;
+            opacity:0.75;
+			font-family:Calibri;
+            }		
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.div4_1 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}			
+	
+.button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 14px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 16px 4px;
+                cursor: pointer;
+                border-radius: 8px;
+			   }	
+			   
+			   
+</style>
+<body>
+<div class="div1"><h1>nxten meet</h1>
+</div>
+<div class="time">
+     <p id="date" align="right"></p>
+                       <!--script of date and time-->
+					   <script>
+                                var d = Date();
+                                document.getElementById("date").innerHTML = d;
+                        </script>
+</div>
+<div >
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active" href="chat.html">Chat</a></li>
+  <li><a href="about_us.html">About us!</a></li>
+</ul>
+</div>
+<div class="div4">
+<div class="div4_1">
+<h3>Create The Chatroom or Join Existing Chatroom</h3>
+<input type="text" id="chatroom" placeholder="Enter the chatroom name here....!"><br>
+<button class="button" onclick="window.location.href = linkGeneration1();">Text chat</button>
+<button class="button" onclick="window.location.href = linkGeneration2();">Video chat</button>
+
+
+
+</div>
+<div>
+<p><b>Caution:</b>Cross connection may be possible. So, keep your chatroom name unique.</p>
+<h4 style="color:#0CD1E9">Step to create or join chat</h4>
+<p>1.Enter the chatroom name in input to create/join.<br>
+2.After enter the name click <b>"text or video chat"</b>whatever you want.<br>
+3.Then a window of chatroom will open. Then,<b> copy the URL</b> and <b>share</b> to person with which you want to chat, through message or other social media platform.<br>
+4.If you want to join <b>click</b> on shared URL or <b>enter chatroom name and click video or text chat according to your message</b>and <b>Wait</b> for sometime. Then, you will connect to each other.<br>
+5.If there are any problem in connection then <b>refreash</b> the page.
+</p>
+
+</div>
+
+
+
+</div>
+<script>
+function linkGeneration1() {
+  var input = document.getElementById("chatroom").value;
+  var x;
+  
+  for (var i = 0; i < input.length; i++) {
+       x+= input[i].charCodeAt(0).toString(16);
+  }
+  
+  
+  var str1 = "chattxt.html#";
+  var y = str1.concat(x);
+  return y;
+  }
+</script>
+
+<script>
+function linkGeneration2() {
+  var input = document.getElementById("chatroom").value;
+  var x;
+  
+  for (var i = 0; i < input.length; i++) {
+       x+= input[i].charCodeAt(0).toString(16);
+  }
+  
+
+  var str1 = "chatvid.html#";
+  var y = str1.concat(x);
+  return y;
+  }  
+
+
+</script>
+
+
+<div class="div5">
+ <p align="center">&copy 2020| Nxten Internet</p>
+</div>
+</body>
+</html>
